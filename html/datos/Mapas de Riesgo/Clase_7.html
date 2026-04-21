@@ -1,0 +1,1806 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>\(\color{blue}{\huge\bf\mathcal{Clase\ 7\ -\ Python:}}\) &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datos/Mapas de Riesgo/Clase_7';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../eda.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/Logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../eda.html">
+                    Análisis exploratorio - Infracciones electrónicas en la ciudad de Barranquilla
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdatos/Mapas de Riesgo/Clase_7.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/datos/Mapas de Riesgo/Clase_7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>\color{blue}{\huge\bf\mathcal{Clase\ 7\ -\ Python:}}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span class="math notranslate nohighlight">\(\color{blue}{\huge\bf\mathcal{Clase\ 7\ -\ Python:}}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-generales-con-pandas"><font color="green">Gráficos descriptivos generales con <u> pandas:</u> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-generales-pandas-bokeh"><font color="green">Gráficos descriptivos generales <u>pandas_bokeh:</u> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-con-matplotlib"><font color="green">Gráficos descriptivos con <u>matplotlib:</u> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-con-seaborn"><font color="green">Gráficos descriptivos con <u>seaborn:</u> </font></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-desempleo-en-antioquia-visualizacion-con-mapas">Ejemplo desempleo en Antioquia - Visualización con MAPAS:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incluyendo-mapas-para-visualizar-la-informacion">Incluyendo mapas para visualizar la información:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otra-forma-de-graficar-mapas">Otra forma de graficar mapas:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blue-large-longrightarrow-large-mathcal-actividad-large-mathcal-practica"><font color="blue"> <span class="math notranslate nohighlight">\(\color{blue}{\large\longrightarrow}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{Actividad}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{práctica}\)</span> : </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-mathcal-solucion"><font color="blue"> <span class="math notranslate nohighlight">\(\large\mathcal{Solución}\)</span>: </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-green-large-longrightarrow-large-mathcal-trabajo-large-mathcal-2"><font color="green"> <span class="math notranslate nohighlight">\(\color{green}{\large\longrightarrow}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{Trabajo}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{\ 2}\)</span> : </font></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="color-blue-huge-bf-mathcal-clase-7-python">
+<h1><span class="math notranslate nohighlight">\(\color{blue}{\huge\bf\mathcal{Clase\ 7\ -\ Python:}}\)</span><a class="headerlink" href="#color-blue-huge-bf-mathcal-clase-7-python" title="Link to this heading">#</a></h1>
+<p>El objetivo de esta clase es presentar los tipos de gráficos estadísticos que se pueden obtener en <strong>Python</strong> utilizando los módulos <strong>pandas</strong>, <strong>matplotlib</strong> y <strong>seaborn</strong>. Los temas que veremos son:</p>
+<ul class="simple">
+<li><p>Creación de gráficos descriptivos generales y por grupos.</p></li>
+<li><p>Tipos de gráficos según la naturaleza de las variables.</p></li>
+<li><p>Gráficos para la identificación de relaciones entre las variables.</p></li>
+</ul>
+<img src = 'imagenes/IMAG2.jpeg' height=500 width=500> <p>Existe una amplia variedad de métodos para gráficar variables tanto en <strong>Python</strong> como en <strong>R</strong>.</p>
+<p>Un sitio web muy interesante que exhibe un gran número de ejemplos para graficar datos con <strong>Python</strong> es:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://python-graph-gallery.com/chord-diagram/">https://python-graph-gallery.com/chord-diagram/</a></p></li>
+</ul>
+<section id="graficos-descriptivos-generales-con-pandas">
+<h2><font color="green">Gráficos descriptivos generales con <u> pandas:</u> </font><a class="headerlink" href="#graficos-descriptivos-generales-con-pandas" title="Link to this heading">#</a></h2>
+<p>A continuación veremos algunos gráficos simples que se obtienen con propiedades del <strong>pandas</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> <span class="c1"># Importamos el pandas con el álias pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Contienuemos con el análisis de la base de datos <strong>master.csv</strong> y obtengamos gráficos que nos permitan visualizar la información que contiene esta base de datos:</p>
+<ol class="arabic simple">
+<li><p>Leamos y procesemos la base de datos <strong>master.csv</strong>:</p></li>
+</ol>
+<p>Pagina web para instalar el janitor:</p>
+<p><a class="reference external" href="https://anaconda.org/conda-forge/pyjanitor">https://anaconda.org/conda-forge/pyjanitor</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from backports import configparser</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>janitor
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: janitor in c:\users\keyla alba\anaconda3\lib\site-packages (0.1.1)
+Requirement already satisfied: gevent in c:\users\keyla alba\anaconda3\lib\site-packages (from janitor) (22.10.2)
+Requirement already satisfied: wsgi-oauth2 in c:\users\keyla alba\anaconda3\lib\site-packages (from janitor) (0.2.2)
+Requirement already satisfied: Flask in c:\users\keyla alba\anaconda3\lib\site-packages (from janitor) (1.1.2)
+Requirement already satisfied: Jinja2&gt;=2.10.1 in c:\users\keyla alba\anaconda3\lib\site-packages (from Flask-&gt;janitor) (2.11.3)
+Requirement already satisfied: Werkzeug&gt;=0.15 in c:\users\keyla alba\anaconda3\lib\site-packages (from Flask-&gt;janitor) (2.0.3)
+Requirement already satisfied: click&gt;=5.1 in c:\users\keyla alba\anaconda3\lib\site-packages (from Flask-&gt;janitor) (8.0.4)
+Requirement already satisfied: itsdangerous&gt;=0.24 in c:\users\keyla alba\anaconda3\lib\site-packages (from Flask-&gt;janitor) (2.0.1)
+Requirement already satisfied: colorama in c:\users\keyla alba\anaconda3\lib\site-packages (from click&gt;=5.1-&gt;Flask-&gt;janitor) (0.4.4)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in c:\users\keyla alba\anaconda3\lib\site-packages (from Jinja2&gt;=2.10.1-&gt;Flask-&gt;janitor) (2.0.1)
+Requirement already satisfied: cffi&gt;=1.12.2 in c:\users\keyla alba\anaconda3\lib\site-packages (from gevent-&gt;janitor) (1.15.0)
+Requirement already satisfied: greenlet&gt;=2.0.0 in c:\users\keyla alba\anaconda3\lib\site-packages (from gevent-&gt;janitor) (2.0.1)
+Requirement already satisfied: zope.event in c:\users\keyla alba\anaconda3\lib\site-packages (from gevent-&gt;janitor) (4.6)
+Requirement already satisfied: setuptools in c:\users\keyla alba\anaconda3\lib\site-packages (from gevent-&gt;janitor) (61.2.0)
+Requirement already satisfied: zope.interface in c:\users\keyla alba\anaconda3\lib\site-packages (from gevent-&gt;janitor) (5.4.0)
+Requirement already satisfied: pycparser in c:\users\keyla alba\anaconda3\lib\site-packages (from cffi&gt;=1.12.2-&gt;gevent-&gt;janitor) (2.21)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importamos el módulo janitor para obtener la propiedad de transformación de columnas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">janitor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jan</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ConfigParser</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [25],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Importamos el módulo janitor para obtener la propiedad de transformación de columnas</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">janitor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jan</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ConfigParser</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">anaconda3</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">janitor</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot; :mod:`janitor`</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd">     ~~~~~~~~~~~~~~</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ConfigParser</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">send_from_directory</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gevent.pywsgi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WSGIServer</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ConfigParser&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ponemos la dirección donde se encuentra la base de datos</span>
+<span class="n">direccion</span> <span class="o">=</span> <span class="s2">&quot;C:/Users/Keyla Alba/OneDrive - Universidad del Norte/Mestría en Estadísticas/VISUALIZACION DE DATOS R-PHYTON/VISUALIZACION DE DATOS R-PHYTON/Datos/master.csv&quot;</span>
+
+<span class="n">master</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">direccion</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Leemos la base de datos</span>
+
+<span class="n">nombres_viejos</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">columns</span>  <span class="c1"># Estraemos los nombres viejos para cambiarlos</span>
+
+<span class="c1"># Definimos los cambios de nombres:</span>
+<span class="n">cambios</span> <span class="o">=</span> <span class="p">{</span><span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="s2">&quot;pais&quot;</span><span class="p">,</span>       <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s2">&quot;anio&quot;</span><span class="p">,</span>       <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;sexo&quot;</span><span class="p">,</span>
+           <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s2">&quot;edad&quot;</span><span class="p">,</span>       <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="s2">&quot;num_suic&quot;</span><span class="p">,</span>   <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="s2">&quot;poblacion&quot;</span><span class="p">,</span>
+           <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="s2">&quot;pais_anio&quot;</span><span class="p">,</span>  <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="s2">&quot;idh_anio&quot;</span><span class="p">,</span>
+           <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="s2">&quot;pib_anio&quot;</span><span class="p">,</span>   <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="s2">&quot;pib_pcap&quot;</span><span class="p">,</span>  <span class="n">nombres_viejos</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="s2">&quot;generacion&quot;</span><span class="p">}</span>
+
+<span class="n">master</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cambios</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Cambiamos los nombres</span>
+
+<span class="c1"># Arreglamos el problema de las comas con la variable pib_anio y la transformamos en número:</span>
+<span class="n">master</span><span class="p">[</span><span class="s2">&quot;pib_anio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;pib_anio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Creamos una nueva variable con pib_anio dada en millones de dólares:</span>
+
+
+<span class="c1"># Función auxiliar que divide por un millón y redondea a dos decimales</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fn_aux</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">master</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">transform_columns</span><span class="p">([</span><span class="s2">&quot;pib_anio&quot;</span><span class="p">],</span> <span class="n">fn_aux</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;_mill&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eliminamos la variable pais_anio</span>
+<span class="n">master</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">select_columns</span><span class="p">([</span><span class="s2">&quot;pais_anio&quot;</span><span class="p">],</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">master</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Importamos el módulo janitor para obtener la propiedad de transformación de columnas</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">janitor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jan</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Ponemos la dirección donde se encuentra la base de datos</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">direccion</span> <span class="o">=</span> <span class="s2">&quot;C:/Users/Keyla Alba/OneDrive - Universidad del Norte/Mestría en Estadísticas/VISUALIZACION DE DATOS R-PHYTON/VISUALIZACION DE DATOS R-PHYTON/Datos/master.csv&quot;</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">anaconda3</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">janitor</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot; :mod:`janitor`</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd">     ~~~~~~~~~~~~~~</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ConfigParser</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">send_from_directory</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gevent.pywsgi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WSGIServer</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ConfigParser&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">direccion</span> <span class="o">=</span> <span class="s2">&quot;C:/Users/Keyla Alba/OneDrive - Universidad del Norte/Mestría en Estadísticas/VISUALIZACION DE DATOS R-PHYTON/VISUALIZACION DE DATOS R-PHYTON/Datos/master.csv&quot;</span>
+
+<span class="n">master</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">direccion</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Organicemos algunos detalles de la base de datos. Antes de realizar cualquier gráfico, conviene asignar un orden cronológico correcto a la variable edad y para ello utilizamos las siguientes líneas:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primero convertimos de object a category:</span>
+<span class="n">master</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+
+<span class="c1"># Luego definimos el nuevo orden:</span>
+<span class="n">nuevo_orden_edad</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;5-14 years&#39;</span><span class="p">,</span><span class="s1">&#39;15-24 years&#39;</span><span class="p">,</span><span class="s1">&#39;25-34 years&#39;</span><span class="p">,</span><span class="s1">&#39;35-54 years&#39;</span><span class="p">,</span><span class="s1">&#39;55-74 years&#39;</span><span class="p">,</span><span class="s1">&#39;75+ years&#39;</span><span class="p">]</span>
+
+<span class="c1"># Guardamos el nuevo orden:</span>
+<span class="n">master</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">reorder_categories</span><span class="p">(</span><span class="n">nuevo_orden_edad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~\anaconda3\lib\site-packages\pandas\core\indexes\base.py:3621,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3620</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3621</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3622</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File ~\anaconda3\lib\site-packages\pandas\_libs\index.pyx:136,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File ~\anaconda3\lib\site-packages\pandas\_libs\index.pyx:163,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas\_libs\hashtable_class_helper.pxi:5198,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">File pandas\_libs\hashtable_class_helper.pxi:5206,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;edad&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">Input In [28],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Primero convertimos de object a category:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Luego definimos el nuevo orden:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">nuevo_orden_edad</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;5-14 years&#39;</span><span class="p">,</span><span class="s1">&#39;15-24 years&#39;</span><span class="p">,</span><span class="s1">&#39;25-34 years&#39;</span><span class="p">,</span><span class="s1">&#39;35-54 years&#39;</span><span class="p">,</span><span class="s1">&#39;55-74 years&#39;</span><span class="p">,</span><span class="s1">&#39;75+ years&#39;</span><span class="p">]</span>
+
+<span class="nn">File ~\anaconda3\lib\site-packages\pandas\core\frame.py:3505,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3503</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3504</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3505</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3506</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3507</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">File ~\anaconda3\lib\site-packages\pandas\core\indexes\base.py:3623,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3621</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3622</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3623</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3624</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3625</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3626</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3627</span>     <span class="c1">#  the TypeError.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3628</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;edad&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para la variable <strong>generacion</strong> también se debe tener en cuenta el siguiente orden cronológico:</p>
+<img src = 'imagenes/IMAG3.jpg' height=500 width=500> 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primero convertimos de object a category:</span>
+<span class="n">master</span><span class="p">[</span><span class="s2">&quot;generacion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;generacion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span> 
+
+<span class="c1"># Luego definimos el nuevo orden:</span>
+<span class="n">nuevo_orden_gen</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;G.I. Generation&#39;</span><span class="p">,</span> <span class="s1">&#39;Silent&#39;</span><span class="p">,</span> <span class="s1">&#39;Boomers&#39;</span><span class="p">,</span> <span class="s1">&#39;Generation X&#39;</span><span class="p">,</span><span class="s1">&#39;Millenials&#39;</span><span class="p">,</span> <span class="s1">&#39;Generation Z&#39;</span><span class="p">]</span>
+
+<span class="c1"># Guardamos el nuevo orden:</span>
+<span class="n">master</span><span class="p">[</span><span class="s2">&quot;generacion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">master</span><span class="p">[</span><span class="s2">&quot;generacion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">reorder_categories</span><span class="p">(</span><span class="n">nuevo_orden_gen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Seleccionemos distintos subconjuntos y resumenes de datos para visualizarlos:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Un primer subgrupo a tener en cuenta podría ser el correspondiente a los datos de nuestro país:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtremos los datos de nuestro país:</span>
+
+<span class="n">master_col</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;pais==&#39;Colombia&#39;&quot;</span><span class="p">)</span>
+
+<span class="n">master_col</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Si deseamos saber cuál es la evolución del PIB por año y de la tasa de suicidios por cada 100 mil habitantes en Colombia, además de la relación entre estas dos variables. Podemos obtener el siguiente resumen:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">]]</span>
+ 
+<span class="n">resum_col_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la tabla anterior, se puede ver que la variable <strong>anio</strong> es un índice, sin embargo, la podemos convertir en una columna o nueva variable con la propiedad <strong>reset_index()</strong> para poder utilizarla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">resum_col_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La tabla anterior brida información importante, pero resulta más eficiente un gráfico:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos incluir dos gráficos de la evolución por año:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Si deseamos saber cuál es la evolución del PIB por año y de la tasa de suicidios por cada 100 mil habitantes en Colombia, además de la relación entre estas dos variables, teniendo en cuenta la variable <strong>sexo</strong>, podemos obtener el siguiente resumen:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_2</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span><span class="s2">&quot;anio&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">]]</span>
+ 
+<span class="n">resum_col_2</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">resum_col_2</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span><span class="s2">&quot;anio&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">resum_col_2</span>
+
+<span class="ne">NameError</span>: name &#39;master_col&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Convertimos los índices en variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+
+<span class="n">resum_col_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Consideremos el gráfico de <strong>anio</strong> por <strong>suic_x100k</strong> considerando con colores el <strong>sexo</strong>, como la propiedad <strong>plot</strong> del pandas solo acepta colores definiéndolos, entonces tenemos que crear una variable auxiliar llamada <strong>colores</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vector auxiliar con los colores por sexo:</span>
+<span class="n">colores</span> <span class="o">=</span> <span class="n">resum_col_2</span><span class="p">[</span><span class="s2">&quot;sexo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="s2">&quot;female&quot;</span><span class="p">],[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;pink&quot;</span><span class="p">])</span>
+
+<span class="c1"># Graficamos:</span>
+<span class="n">resum_col_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos plantear un gráfico boxplot, tal como vimos en clases anteriores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Si queremos saber cuál es el total de suicidios en Colombia durante el período de 1985 a 2015 teniendo en cuenta la generación y el sexo, podemos obtener el siguiente resumen:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_3</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;generacion&quot;</span><span class="p">,</span><span class="s2">&quot;sexo&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()[[</span><span class="s2">&quot;num_suic&quot;</span><span class="p">]]</span>
+
+<span class="n">resum_col_3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Transformamos <strong>generacion</strong> en variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_3</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">resum_col_3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realizamos el gráfico de barras, para el número total de suicidios durante el período 1985 a 2015 en Colombia, considerando la variable <strong>generacion</strong> y coloreando por <strong>sexo</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vector auxiliar con los colores por sexo:</span>
+<span class="n">colores</span> <span class="o">=</span> <span class="n">resum_col_3</span><span class="p">[</span><span class="s2">&quot;sexo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="s2">&quot;female&quot;</span><span class="p">],[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;pink&quot;</span><span class="p">])</span>
+
+<span class="n">resum_col_3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;generacion&quot;</span><span class="p">,</span><span class="s2">&quot;num_suic&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colores</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="graficos-descriptivos-generales-pandas-bokeh">
+<h2><font color="green">Gráficos descriptivos generales <u>pandas_bokeh:</u> </font><a class="headerlink" href="#graficos-descriptivos-generales-pandas-bokeh" title="Link to this heading">#</a></h2>
+<p>Además del módulo <strong>pandas</strong> existe una extensión del mismo para realizar gráficos llamada <strong>pandas_bokeh</strong>. Un sitio web donde se puede encontrar información además de ejemplos es:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/PatrikHlobil/Pandas-Bokeh">PatrikHlobil/Pandas-Bokeh</a></p></li>
+</ul>
+<p>O también:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/pandas-bokeh/">https://pypi.org/project/pandas-bokeh/</a></p></li>
+</ul>
+<p>Para instalarlo basta con seguir las siguientes instrucciones:</p>
+<ol class="arabic simple">
+<li><p>Cerrar todas las sesiones y archivos relacionados con jupyter notebook, inlcuyendo la ventana negra de comandos.</p></li>
+<li><p>Ir a todos los programas.</p></li>
+<li><p>Buscar Anaconda3 <span class="math notranslate nohighlight">\(\longrightarrow\)</span> <strong>Anaconda prompt</strong></p></li>
+<li><p>Escribir cualquiera de los dos siguientes códigos</p>
+<ul class="simple">
+<li><p>pip install pandas-bokeh</p></li>
+<li><p>conda install -c patrikhlobil pandas-bokeh</p></li>
+</ul>
+</li>
+<li><p>Esperar a que cargue (lo cual puede tardar algunos minutos) y si aparece una pregunta con respecto a instalar módulos adicionales con la opción <strong>y/n</strong>, darle <strong>y</strong> y esperar.</p></li>
+</ol>
+<p>El módulo <strong>pandas_bokeh</strong> tiene más opciones que facilitan la realización de gráficos comparado con <strong>pandas</strong>. Además, la visualización resulta ser interactiva. Veamos a continuación algunos ejemplos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas_bokeh</span> <span class="c1"># Importamos el pandas_bokeh sin usar un álias, aunque se podría poner uno.</span>
+
+<span class="n">pandas_bokeh</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span> <span class="c1"># La función output_notebook() del pandas_bokeh permite que los gráficos se incluyan en</span>
+                               <span class="c1"># este notebook.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot_bokeh</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTA:</strong> Cuando se presentan warnings debido a que alguna opción es obsoleta (deprecated) podemos usar las dos siguientes líneas para ignorar dichos warnings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>                     
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot_bokeh</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">)</span>
+
+<span class="n">resum_col_1</span><span class="o">.</span><span class="n">plot_bokeh</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">plot_bokeh</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span><span class="n">category</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="n">zooming</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Nota:</strong> La opción <strong>zooming=False</strong> fija el gráfico y no permite realizar un zoom del mismo.</p>
+<p>También podemos realizare un gráfico de barras de los datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como la propiedad <strong>plot_bokeh</strong> funciona diferente a la propiedad <strong>plot</strong>, entonces debemos darle una estructura diferente al data frame anterior, utilizando la propiedad <strong>pivot</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_31</span> <span class="o">=</span> <span class="n">resum_col_3</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;num_suic&quot;</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;generacion&quot;</span><span class="p">)</span>
+
+<span class="n">resum_col_31</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_31</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como los nombres de las columnas tienen una estructura no habitual, entonces redefinimos dichos nombres:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_31</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;female&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">]</span>
+
+<span class="n">resum_col_31</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>También es importante notar que el índice corresponde a la variable <strong>generacion</strong>. Luego de obtener esta nueva estructura del data frame, realizamos el gráfico interactivo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_31</span><span class="o">.</span><span class="n">plot_bokeh</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Generación&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Número de suicidios&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Número de suicidios por generación&quot;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTA</strong>: En este momento la propiedad <strong>plot_bokeh</strong> no cuenta con gráficos como el boxplot, pero según lo que proponen sus creadores, en un futuro muy cercano las opciones de dicha propiedad aumentarán.</p>
+</section>
+<section id="graficos-descriptivos-con-matplotlib">
+<h2><font color="green">Gráficos descriptivos con <u>matplotlib:</u> </font><a class="headerlink" href="#graficos-descriptivos-con-matplotlib" title="Link to this heading">#</a></h2>
+<p>El módulo <strong>matplotlib</strong> contiene una sublibrería o submódulo llamado <strong>pyplot</strong> que permiten realizar un gran número de gráficos. Veamos ejemplos y opciones gráficas que nos serán muy útiles.</p>
+<p>Lo primero que debemos hacer es cargar la sublibrería <strong>pyplot</strong> de la librería <strong>matplotlib</strong> y le damos el álias <strong>plt</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para poner estos tres gráficos en un solo panel, podemos usar la función <strong>plt.subplot</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos cambiar el tamaño con <strong>plt.figure</strong> usando la opción <strong>figsize</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos incluir etiquetas en los ejes x y y además de un título con las funciones <strong>plt.xlabel</strong>, <strong>plt.ylabel</strong> y <strong>plt.title</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gráfico 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Pib año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Suicidios por 100 mil habitantes&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gráfico 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Suicidios por 100 mil habitantes&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gráfico 3&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Pib año&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos guardar este gráfico con la función <strong>plt.savefig</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gráfico 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Pib año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Suicidios por 100 mil habitantes&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gráfico 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Suicidios por 100 mil habitantes&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Primer argumento: n° de filas, segundo: n° de columnas, tercero: posición del próximo gráfico </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gráfico 3&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Pib año&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figuras/figura_1.pdf&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando utilizamos las funciones del submódulo <strong>ply</strong>, hay que tener cuidado con el hecho que cada vez que realizamos un gráfico, el siguiente se sobrepone sobre el primero. Esto se puede evitar con la opción <strong>plt.show()</strong>. Veamos en qué consiste esta observación con un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;male&#39;&quot;</span><span class="p">)</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hombre&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span> <span class="c1"># Primer gráfico</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;female&#39;&quot;</span><span class="p">)</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mujer&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">)</span> <span class="c1"># Segundo gráfico</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;male&#39;&quot;</span><span class="p">)</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hombre&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>  <span class="c1"># Primer gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># Muestra la etiqueta del primer gráfico</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    <span class="c1"># Cierra el primer gráfico y lo separa del segundo. </span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;female&#39;&quot;</span><span class="p">)</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mujer&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">)</span> <span class="c1"># Segundo gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># Muestra la etiqueta del segundo gráfico</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="graficos-descriptivos-con-seaborn">
+<h2><font color="green">Gráficos descriptivos con <u>seaborn:</u> </font><a class="headerlink" href="#graficos-descriptivos-con-seaborn" title="Link to this heading">#</a></h2>
+<p>El módulo <strong>seaborn</strong> tiene una amplia gamma de funciones que permiten realizar un número significativo de gráficos de manera simple y práctica. Primero importemos el módulo y usemos el álias <strong>sns</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realicemos algunos de los gráficos vistos anteriormente y veamos que resulta más simple con este módulo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">resum_col_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;female&#39;&quot;</span><span class="p">)[</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mujer&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">resum_col_2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;male&#39;&quot;</span><span class="p">)[</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hombre&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1">#  Usado para aumentar el tamaño del gráfico</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s2">&quot;generacion&quot;</span><span class="p">,</span><span class="s2">&quot;num_suic&quot;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Si deseamos saber cuál es la evolución de la tasa de suicidios por cada 100 mil habitantes en Colombia teniendo en cuenta las variables <strong>sexo</strong> y <strong>edad</strong> podemos obtener el siguiente resumen:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_4</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;edad&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">]]</span>
+ 
+<span class="n">resum_col_4</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Transformamos <strong>sexo</strong>, <strong>anio</strong> y <strong>edad</strong> en variables columna:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resum_col_4</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">resum_col_4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1">#  Usado para aumentar el tamaño del gráfico</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">resum_col_4</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;female&#39;&quot;</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;edad&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Mujeres&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">resum_col_4</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sexo==&#39;male&#39;&quot;</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;edad&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hombres&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Debido al gran número de catgorías que tiene la variable <strong>edad</strong>, los gráficos anteriores se ven muy saturados. Otra opción consiste en utilizar la función <strong>FacetGrid</strong> del <strong>seaborn</strong> junto con la propiedad <strong>map</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grafico</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">resum_col_4</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">)</span>
+<span class="n">grafico</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="n">grafico</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro tipo de gráfico que puede resultar útil para ilustrar la información anterior hace uso de la función <strong>relplot</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_4</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Otro tipo de gráfico bastante útil se puede obtener con la función <strong>pairplot</strong> del módulo <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtenemos un resumen promedio por año y sexo de las variables numéricas &quot;suic_x100k&quot;,&quot;pib_anio&quot;,&quot;pib_anio_mill&quot;:</span>
+<span class="n">resum_col_51</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;sexo&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span><span class="s2">&quot;pib_anio&quot;</span><span class="p">,</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Obtenemos un total por año y sexo de las variables numéricas &quot;num_suic&quot;,&quot;poblacion&quot;:</span>
+<span class="n">resum_col_52</span> <span class="o">=</span> <span class="n">master_col</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="s2">&quot;sexo&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()[[</span><span class="s2">&quot;num_suic&quot;</span><span class="p">,</span><span class="s2">&quot;poblacion&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Concatenamos las dos bases de datos anteriores:</span>
+<span class="n">resum_col_5</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">resum_col_51</span><span class="p">,</span><span class="n">resum_col_52</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Convertimos las variables año y sexo en columnas:</span>
+<span class="n">resum_col_5</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Visualizamos el resumen final:</span>
+<span class="n">resum_col_5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos ahora obtener un resumen gráfico general visualizando con colores la variable <strong>sexo</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">resum_col_5</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si queremos incluir gráficos de tendencia lineal podemos utilizar la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">x_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">],</span> <span class="n">y_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;poblacion&quot;</span><span class="p">,</span><span class="s2">&quot;pib_anio_mill&quot;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">resum_col_5</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;reg&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro gráfico que podría resultar interesante es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;suic_x100k&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;poblacion&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">resum_col_5</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ejemplo-desempleo-en-antioquia-visualizacion-con-mapas">
+<h1>Ejemplo desempleo en Antioquia - Visualización con MAPAS:<a class="headerlink" href="#ejemplo-desempleo-en-antioquia-visualizacion-con-mapas" title="Link to this heading">#</a></h1>
+<p>Veamos una base de datos relacionada con datos de desempleo en Antioquia.</p>
+<img src = 'imagenes/DESEMPLEO.jpg' height=700 width=700> <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">Datos_1</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:/Users/MAURICIO MAZO/Desktop/CURSO/DATOS/DESEMPLEO_ECV_2017_MUNICIPIOS.txt&quot;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin-1&#39;</span><span class="p">)</span>
+<span class="n">Datos_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Guardamos los nombres de los municipios en la variable <strong>munic_1</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">munic_1</span> <span class="o">=</span> <span class="n">Datos_1</span><span class="p">[</span><span class="s2">&quot;Municipio&quot;</span><span class="p">]</span>
+<span class="n">munic_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="incluyendo-mapas-para-visualizar-la-informacion">
+<h2>Incluyendo mapas para visualizar la información:<a class="headerlink" href="#incluyendo-mapas-para-visualizar-la-informacion" title="Link to this heading">#</a></h2>
+<p>Una herramienta muy útil para visualizar la información consiste en utilizar mapas. Python brinda herramientas para realizar este tipo de gráficos y a continuación veremos un ejemplo.</p>
+<p>Lo primero que debemos hacer es instalar los módulos:</p>
+<ul class="simple">
+<li><p>Actualice primero el Anaconda con los comandos:</p>
+<ul>
+<li><p>conda update conda  (DARLE ENTER).</p></li>
+<li><p>conda update anaconda  (DARLE ENTER).</p></li>
+<li><p>conda update -n root conda (DARLE ENTER).</p></li>
+<li><p>conda update –all  (DARLE ENTER).</p></li>
+</ul>
+</li>
+<li><p><strong>geopandas:</strong> Para leer la base de datos de coordenadas geográficas.</p>
+<ul>
+<li><p>Se debe escribir en Anaconda Prompt: <strong>conda install geopandas</strong></p></li>
+<li><p>Si durante el proceso de instalación pregunta instalar complementos, darle la opción <strong>y</strong>.</p></li>
+<li><p>Un sitio web para obtener información es: <a class="reference external" href="https://geopandas.org/">https://geopandas.org/</a></p></li>
+</ul>
+</li>
+<li><p><strong>descartes:</strong> Para realizar los gráficos de mapas con coordenadas en polígonos.</p>
+<ul>
+<li><p>Se debe escribir en Anaconda Prompt: <strong>conda install descartes</strong></p></li>
+<li><p>Si durante el proceso de instalación pregunta instalar complementos, darle la opción <strong>y</strong>.</p></li>
+<li><p>Un sitio web para obtener información es: <a class="reference external" href="https://pypi.org/project/descartes/">https://pypi.org/project/descartes/</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Luego de instalar los módulos anteriores los cargamos conlos códigos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span> <span class="c1"># Le damos el álias gpd al módulo geopandas</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">descartes</span>        <span class="c1"># No le damos un álias a descartes aunque podríamos hacerlo</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>         <span class="c1"># Utilizamos esto para evitar warnings            </span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span> 
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>     <span class="c1"># Lo necesitamos para un proceso adicional</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Necesitamos descargar las coordenadas del mapa requerido. Con respecto a mapas de Colombia, podemos descargar dichos archivos de la página del DANE en formato <strong>.shp</strong> (en realidad son varios archivos que se complementan entre sí y que tienen distintas extensiones como <strong>dbf</strong>, <strong>prj</strong>, <strong>sbn</strong>, <strong>sbx</strong>, <strong>shp</strong>, <strong>shx</strong>, <strong>xml</strong>):</p>
+<p><a class="reference external" href="https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/descarga-mgn-marco-geoestadistico-nacional/">https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/descarga-mgn-marco-geoestadistico-nacional/</a></p>
+<p>Leemos ahora los datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;C:/Users/MAURICIO MAZO/Desktop/CURSO/DATOS/coordenadas/ANTIOQUIA/ANTIOQUIA.shp&quot;</span><span class="p">)</span>
+
+<span class="n">mapa_ant</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realizamos el gráfico de Antioquia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si deseamos eliminar las etiquetas de los ejes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra opción:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los nombres de los municipios están dados por:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">munic_2</span> <span class="o">=</span> <span class="n">mapa_ant</span><span class="p">[</span><span class="s1">&#39;MPIO_CNMBR&#39;</span><span class="p">]</span>
+
+<span class="n">munic_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">munic_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparando con los nombres de los municipios de la base de datos <strong>Datos_1</strong>:</p>
+<ol class="arabic simple">
+<li><p>Cambiamos los acentos latinos por letras sin dichos acentos:</p></li>
+</ol>
+<p>Para homogenizar los nombres de las variables en ambas bases de datos, <strong>Datos_1</strong>  y <strong>mapa_ant</strong>, con el siguiente procedimiento:</p>
+<ul class="simple">
+<li><p>Para <strong>Datos_1:</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mal_car</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;á&#39;</span><span class="p">,</span> <span class="s1">&#39;é&#39;</span><span class="p">,</span> <span class="s1">&#39;í&#39;</span><span class="p">,</span> <span class="s1">&#39;ó&#39;</span><span class="p">,</span> <span class="s1">&#39;ú&#39;</span><span class="p">,</span> <span class="s1">&#39;ñ&#39;</span><span class="p">,</span> <span class="s1">&#39;ü&#39;</span><span class="p">]</span>  <span class="c1"># Caracteres que queremos cambiar</span>
+<span class="n">bien_car</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span> <span class="c1"># Caracteres por los que queremos cambiar</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mal_car</span><span class="p">)):</span>  <span class="c1"># Este for recorre cada elemento de cada municipio reemplazando los caracteres malos</span>
+    <span class="n">munic_1</span> <span class="o">=</span> <span class="n">munic_1</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mal_car</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bien_car</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># Reemplazamos los caracteres</span>
+                                                                           <span class="c1"># y los ponemos en minúscula</span>
+<span class="n">munic_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Para <strong>mapa_ant:</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mal_car</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;á&#39;</span><span class="p">,</span> <span class="s1">&#39;é&#39;</span><span class="p">,</span> <span class="s1">&#39;í&#39;</span><span class="p">,</span> <span class="s1">&#39;ó&#39;</span><span class="p">,</span> <span class="s1">&#39;ú&#39;</span><span class="p">,</span> <span class="s1">&#39;ñ&#39;</span><span class="p">,</span> <span class="s1">&#39;ü&#39;</span><span class="p">]</span>  <span class="c1"># Caracteres que queremos cambiar</span>
+<span class="n">bien_car</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span> <span class="c1"># Caracteres por los que queremos cambiar</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mal_car</span><span class="p">)):</span> <span class="c1"># Este for recorre cada elemento de cada municipio reemplazando los caracteres malos</span>
+    <span class="n">munic_2</span> <span class="o">=</span> <span class="n">munic_2</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mal_car</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bien_car</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># Reemplazamos los caracteres</span>
+                                                                           <span class="c1"># y los ponemos en minúscula</span>
+<span class="n">munic_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Comparamos ambas listas de nombres para ver donde NO hay coincidencias de los nombres y para ello, creamos la siguiente función:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">match</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">lista</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">set_b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">set_b</span><span class="p">:</span>
+            <span class="nb">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lista</span><span class="o">+=</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">lista</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">match</span><span class="p">(</span><span class="n">munic_1</span><span class="p">,</span> <span class="n">munic_2</span><span class="p">)</span>
+<span class="n">a1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">match</span><span class="p">(</span><span class="n">munic_2</span><span class="p">,</span> <span class="n">munic_1</span><span class="p">)</span>
+<span class="n">a2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">munic_2</span><span class="p">[</span><span class="n">a2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Hacemos estos cambios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">munic_1</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;carolina del principe&#39;</span><span class="p">:</span><span class="s1">&#39;carolina&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;donmatias&#39;</span><span class="p">:</span><span class="s1">&#39;don matias&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;san andres de cuerquia&#39;</span><span class="p">:</span><span class="s1">&#39;san andres&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;san pedro de los milagros&#39;</span><span class="p">:</span><span class="s1">&#39;san pedro&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;santa rosa de osos&#39;</span><span class="p">:</span><span class="s1">&#39;santa.rosa de osos&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;santa fe de antioquia&#39;</span><span class="p">:</span><span class="s1">&#39;santafe de antioquia&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;el carmen de viboral&#39;</span><span class="p">:</span><span class="s1">&#39;carmen de viboral&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;el penol&#39;</span><span class="p">:</span><span class="s1">&#39;penol&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;el retiro&#39;</span><span class="p">:</span><span class="s1">&#39;retiro&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;el santuario&#39;</span><span class="p">:</span><span class="s1">&#39;santuario&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;la ceja del tambo&#39;</span><span class="p">:</span><span class="s1">&#39;la ceja&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;san vicente ferrer&#39;</span><span class="p">:</span><span class="s1">&#39;san vicente&#39;</span><span class="p">},</span>
+                <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">munic_1</span><span class="p">[</span><span class="n">a1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">munic_2</span><span class="p">[</span><span class="n">a2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Una vez hechos los cambios anteriores, concatenamos las bases de datos <strong>mapa_ant</strong> aparecen los municipios de <strong>Datos_1</strong>:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creamos el código de concatenación</span>
+
+<span class="n">Datos_1</span><span class="p">[</span><span class="s2">&quot;codigo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">munic_1</span>
+<span class="n">mapa_ant</span><span class="p">[</span><span class="s2">&quot;codigo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">munic_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenamos las bases de datos:</span>
+
+<span class="n">Datos_tot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mapa_ant</span><span class="p">,</span> <span class="n">Datos_1</span> <span class="p">,</span> <span class="n">on</span> <span class="o">=</span><span class="s1">&#39;codigo&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos_tot</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Verificamos dónde hay valores NA:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos_tot</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos_tot_aux</span><span class="o">=</span><span class="n">Datos_tot</span><span class="p">[[</span><span class="s1">&#39;Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;Total&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Abierto&#39;</span><span class="p">,</span> <span class="s1">&#39;Oculto&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;Urbano&#39;</span><span class="p">,</span> <span class="s1">&#39;Rural&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;Hombre&#39;</span><span class="p">,</span> <span class="s1">&#39;Mujer&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;Subregion&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos_tot_aux</span><span class="p">[</span><span class="n">Datos_tot_aux</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Reemplazamos los valores NA por los promedios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valores</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Total&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;Abierto&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Abierto&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="s1">&#39;Oculto&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Oculto&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+          <span class="s1">&#39;Urbano&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Urbano&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="s1">&#39;Rural&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Rural&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="s1">&#39;Hombre&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Hombre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+          <span class="s1">&#39;Mujer&#39;</span><span class="p">:</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Mujer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()}</span> <span class="c1"># Valores a reemplazar</span>
+
+<span class="n">Datos_tot</span><span class="o">=</span><span class="n">Datos_tot</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">valores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos_tot</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">64</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">123</span><span class="p">],:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTA:</strong> En el punto anterior, resultaría más adecuado reemplazar por los valores promedios correspondientes a las regiones de los municipios que tienen datos faltantes. <font color="blue"> ¿Usted cómo lo haría? </font></p>
+<ol class="arabic simple" start="4">
+<li><p>Definimos una variable en <strong>mapa_ant</strong> que contenga los porcentajes de desempleos totales:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span><span class="p">[</span><span class="s1">&#39;desemp_tot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span>
+
+<span class="n">mapa_ant</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Realizamos el gráfico de los municipios de Antioquia considerando la variable desempleo total:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;desemp_tot&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También es posible ubicar legendas con respecto a categorías:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="c1"># Creamos una variable factor a partir del porcentaje total de desempleo:</span>
+<span class="n">mapa_ant</span><span class="p">[</span><span class="s2">&quot;total_fac&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">mapa_ant</span><span class="p">[</span><span class="s2">&quot;desemp_tot&quot;</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># Graficamos:</span>
+<span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;total_fac&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span> <span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También es posible incluir los nombres de los municipios:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %matplotlib notebook</span>
+
+<span class="n">mapa_ant</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;total_fac&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;OrRd&quot;</span><span class="p">)</span>
+
+<span class="c1"># Los siguientes códigos permiten incluir los nombres de los municipios</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">mapa_ant</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;MPIO_CNMBR&#39;</span><span class="p">],</span><span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="otra-forma-de-graficar-mapas">
+<h2>Otra forma de graficar mapas:<a class="headerlink" href="#otra-forma-de-graficar-mapas" title="Link to this heading">#</a></h2>
+<p>El módulo <strong>folium</strong> también se suele utilizar para graficar mapas en Python.  Para la instalación puede seguir los siguientes pasos:</p>
+<ol class="arabic simple">
+<li><p>Cerrar todas las sesiones y archivos relacionados con jupyter notebook, inlcuyendo la ventana negra de comandos.</p></li>
+<li><p>Ir a todos los programas.</p></li>
+<li><p>Buscar Anaconda3 <span class="math notranslate nohighlight">\(\longrightarrow\)</span> <strong>Anaconda prompt</strong></p></li>
+<li><p>Escribir cualquierael código:</p>
+<ul class="simple">
+<li><p>pip install folium</p></li>
+</ul>
+</li>
+<li><p>Esperar a que cargue (lo cual puede tardar algunos minutos) y si aparece una pregunta con respecto a instalar módulos adicionales con la opción <strong>y/n</strong>, darle <strong>y</strong> y esperar.</p></li>
+</ol>
+<p><strong>Información y ejemplos</strong> sobre este módulo se pueden encuentrar en:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://python-visualization.github.io/folium/quickstart.html">https://python-visualization.github.io/folium/quickstart.html</a></p></li>
+<li><p><a class="reference external" href="https://python-visualization.github.io/folium/">https://python-visualization.github.io/folium/</a></p></li>
+<li><p><a class="reference external" href="https://mappinggis.com/2018/10/folium-utilizando-leaflet-con-python/">https://mappinggis.com/2018/10/folium-utilizando-leaflet-con-python/</a></p></li>
+<li><p><a class="reference external" href="https://georgetsilva.github.io/posts/mapping-points-with-folium/">https://georgetsilva.github.io/posts/mapping-points-with-folium/</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>  <span class="c1"># Importamos el módulo fomium</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">folium.plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkerCluster</span> <span class="c1"># Importamos un submódulo del folium</span>
+
+<span class="n">mapa</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">([</span><span class="mf">6.217</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.567</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">mapa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para ubicar marcadores en una coordenada particular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">([</span><span class="mf">6.217</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.567</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">([</span><span class="mf">6.217</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.567</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="s1">&#39;Medellín&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mapa</span><span class="p">)</span>
+<span class="n">mapa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para incluir el mapa de antioquia considere lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La base de datos que leímos con geopandas desde un archivo .shp se </span>
+<span class="c1"># debe transformar en un objeto geojson para trabajar con folium. Para</span>
+<span class="c1"># ello podemos utilizar la propiedad __geo_interface__:</span>
+
+<span class="c1"># Leemos la base de datos nuevamente:</span>
+
+<span class="n">mapa_ant</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;C:/Users/MAURICIO MAZO/Desktop/CURSO/DATOS/coordenadas/ANTIOQUIA/ANTIOQUIA.shp&quot;</span><span class="p">)</span>
+
+<span class="c1"># Incluimos nuevamente la variable desempleo total en mapa_ant</span>
+<span class="c1"># teniendo en cuenta que se hicieron todos los preocedimientos</span>
+<span class="c1"># de corrección de nombres y demás:</span>
+
+<span class="n">mapa_ant</span><span class="p">[</span><span class="s1">&#39;desemp_tot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Datos_tot</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span>
+
+
+<span class="n">mapa</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">([</span><span class="mf">6.217</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.567</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Tranformamos a objeto geojson:</span>
+<span class="n">mapa_ant_geojson</span> <span class="o">=</span> <span class="n">mapa_ant</span><span class="o">.</span><span class="n">__geo_interface__</span>
+
+<span class="c1"># Luego usamos la función GeoJson:</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span><span class="n">mapa_ant_geojson</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mapa</span><span class="p">)</span>
+
+<span class="c1"># Pedimos que nos muestre el mapa:</span>
+
+<span class="n">mapa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si deseamos ubicar los municipios con porcentajes de desempleo total mayor a 10%, usamos una función auxiliar, junto con la opción <strong>style_function</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">([</span><span class="mf">6.217</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.567</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">fun_col_aux</span> <span class="o">=</span>  <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;fillColor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span> <span class="k">if</span>
+                          <span class="n">x</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;desemp_tot&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">10</span> <span class="k">else</span>
+                             <span class="s1">&#39;blue&#39;</span><span class="p">}</span> 
+
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span><span class="n">mapa_ant_geojson</span><span class="p">,</span><span class="n">style_function</span> <span class="o">=</span> <span class="n">fun_col_aux</span> <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mapa</span><span class="p">)</span>
+<span class="n">mapa</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-blue-large-longrightarrow-large-mathcal-actividad-large-mathcal-practica">
+<h2><font color="blue"> <span class="math notranslate nohighlight">\(\color{blue}{\large\longrightarrow}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{Actividad}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{práctica}\)</span> : </font><a class="headerlink" href="#color-blue-large-longrightarrow-large-mathcal-actividad-large-mathcal-practica" title="Link to this heading">#</a></h2>
+<p>Considerando la base de datos <strong>master</strong>, realice un comparativo gráfico entre <strong>Colombia</strong> y <strong>EEUU</strong> de los indicadores que se muestran en la base de datos. Saque conclusiones de cada uno de los gráficos.</p>
+</section>
+<section id="large-mathcal-solucion">
+<h2><font color="blue">  <span class="math notranslate nohighlight">\(\large\mathcal{Solución}\)</span>: </font><a class="headerlink" href="#large-mathcal-solucion" title="Link to this heading">#</a></h2>
+</section>
+<section id="color-green-large-longrightarrow-large-mathcal-trabajo-large-mathcal-2">
+<h2><font color="green"> <span class="math notranslate nohighlight">\(\color{green}{\large\longrightarrow}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{Trabajo}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{\ 2}\)</span> : </font><a class="headerlink" href="#color-green-large-longrightarrow-large-mathcal-trabajo-large-mathcal-2" title="Link to this heading">#</a></h2>
+<p>La siguiente actividad tiene como fecha de entrega el próximo lunes 14 de diciembre de 2020 antes de las 12:00 media noche.</p>
+<ol class="arabic simple">
+<li><p>Realice un análisis descriptivo completo basado en tablas de resumen y en gráficos de la base de datos <strong>Accidentalidad_en_Barranquilla.csv</strong>. Comente cada uno de los resultados obtenidos.</p></li>
+<li><p>Realice una exploración y un análisis descriptivo completo (incluyendo tablas de resumen y gráficos) de la base de datos <strong>Precios_de_Combustibles_MinEnergia.csv</strong> que se encuentra en la carpeta <strong>DATOS</strong> del archivo Google Drive. Si es posible, <strong>INCLUYA GRÁFICOS CON EL MAPA DE COLOMBIA</strong>.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./datos\Mapas de Riesgo"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span class="math notranslate nohighlight">\(\color{blue}{\huge\bf\mathcal{Clase\ 7\ -\ Python:}}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-generales-con-pandas"><font color="green">Gráficos descriptivos generales con <u> pandas:</u> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-generales-pandas-bokeh"><font color="green">Gráficos descriptivos generales <u>pandas_bokeh:</u> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-con-matplotlib"><font color="green">Gráficos descriptivos con <u>matplotlib:</u> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-descriptivos-con-seaborn"><font color="green">Gráficos descriptivos con <u>seaborn:</u> </font></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-desempleo-en-antioquia-visualizacion-con-mapas">Ejemplo desempleo en Antioquia - Visualización con MAPAS:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incluyendo-mapas-para-visualizar-la-informacion">Incluyendo mapas para visualizar la información:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otra-forma-de-graficar-mapas">Otra forma de graficar mapas:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blue-large-longrightarrow-large-mathcal-actividad-large-mathcal-practica"><font color="blue"> <span class="math notranslate nohighlight">\(\color{blue}{\large\longrightarrow}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{Actividad}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{práctica}\)</span> : </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-mathcal-solucion"><font color="blue"> <span class="math notranslate nohighlight">\(\large\mathcal{Solución}\)</span>: </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-green-large-longrightarrow-large-mathcal-trabajo-large-mathcal-2"><font color="green"> <span class="math notranslate nohighlight">\(\color{green}{\large\longrightarrow}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{Trabajo}\)</span> <span class="math notranslate nohighlight">\(\large\mathcal{\ 2}\)</span> : </font></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Linero, David Marquez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
